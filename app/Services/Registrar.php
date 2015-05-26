@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace torneo\Services;
 
-use App\User;
+use torneo\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
