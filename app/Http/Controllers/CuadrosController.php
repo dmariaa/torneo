@@ -48,7 +48,7 @@ class CuadrosController extends Controller {
 	  return view('jornadas', $data);
 	}
 
-	public function getJornada() {
-	  
+	public function getReglamentos() {
+	  return view('reglamento');
 	}
 }
