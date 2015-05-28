@@ -41,11 +41,7 @@ class CuadrosController extends Controller {
 	}
 	
 	public function getJornadas() {
-	  $data = [
-	    'jornadas' => Jornada::all()  
-	  ];
-	  
-	  return view('jornadas', $data);
+	  return view('jornadas');
 	}
 
 	public function getReglamentos() {

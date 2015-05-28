@@ -16,7 +16,9 @@ class CreateJornadasTable extends Migration {
 		{
 			$table->increments('id');
 			$table->date('semana');
-			$table->boolean('cerrada')->default(false);			
+			$table->boolean('cerrada')->default(false);
+			$table->integer('vuelta')->unsigned()->default(1);
+			$table->boolean('descanso')->default(false);
 			$table->timestamps();
 		});
 	}

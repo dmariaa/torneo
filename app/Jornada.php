@@ -9,4 +9,8 @@ class Jornada extends Model {
   {
     return $this->hasMany('torneo\Partido');
   }
+  
+  public function scopeVuelta($query, $id) {
+    return $query->where('vuelta','=',$id);
+  }
 }
