@@ -16,14 +16,14 @@
       				<span class="local">LOCAL</span><span class="visitante">VISITANTE</span>
       			</div>
       			@foreach($parejas as $pareja)
-      			<div class="col-xs-1 cell-center">
+      			<div class="col-xs-1 cell-center pareja" data-id="{{{ $pareja->id }}}">
       				@foreach($pareja->jugadores as $jugador) {{{ $jugador->slug }}}<br>
       				@endforeach
       			</div>
       			@endforeach
       		</div>
       		@foreach($parejas as $pareja)
-      		<div class="row row-eq-height">
+      		<div class="row row-eq-height pareja" data-id="{{{ $pareja->id }}}">
       			<div class="col-xs-1 cell-center">
       				@foreach($pareja->jugadores as $jugador) {{{ $jugador->slug }}}<br>
       				@endforeach

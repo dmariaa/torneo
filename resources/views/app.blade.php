@@ -35,7 +35,8 @@
 				<ul class="nav navbar-nav">
 					<li><a href="{{ url('resultados') }}">Resultados</a></li>
 					<li><a href="{{ url('jornadas') }}">Jornadas</a></li>
-					<li><a href="{{ url('reglamentos') }}">Reglamentos</a></li>
+					<li><a href="{{ url('parejas') }}">Parejas</a></li>
+					<li><a href="{{ url('reglamentos') }}">Reglamentos</a></li>					
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -58,6 +59,7 @@
 	@yield('content')
 
 	<!-- Scripts -->
+	<script src="{{ asset('/javascript/torneo.js') }}"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
 </body>

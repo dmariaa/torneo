@@ -6147,5 +6147,19 @@ label,
 .descanso {
   font-size: 4em;
 }
+.result {
+  font-size: 2em;
+}
+.btn-double {
+  height: auto;
+}
+@media (min-width: 992px) {
+  .btn-double {
+    height: 68px;
+  }
+}
+.pareja {
+  cursor: pointer;
+}
 
 /*# sourceMappingURL=app.css.map */

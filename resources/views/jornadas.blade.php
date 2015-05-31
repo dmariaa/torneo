@@ -15,24 +15,30 @@
         $semana = new DateTime($fecha); 
         ?>        
           <div class="col-md-3 jornada-container">  
-            <div class="row jornada">
-              <div class="col-xs-9 cell-center">{{{ sprintf("Jornada %s", $jornada->id) }}}
+            <div class="row jornada row-eq-height">
+               <div class="col-xs-3 col-md-3 cell-center"><br>LOCAL</div>
+              <div class="col-xs-3 cell-center">{{{ sprintf("Jornada %s", $jornada->id) }}}
               <br>Semana {{{ $semana->format("W") }}}:</bold> {{{ $jornada->semana }}}</div>
+              <div class="col-xs-3 col-md-3 cell-center"><br>VISITANTE</div>
             </div>
+            <!-- 
             <div class="row jornada">
               <div class="col-xs-4 cell-center">LOCAL</div>
               <div class="col-xs-1 cell-center">&nbsp;</div>
               <div class="col-xs-4 cell-center">VISITANTE</div>
-            </div>  
+            </div>
+             -->  
             @if(sizeof($jornada->partidos) > 0)
               @foreach($jornada->partidos as $partido)
-            <div class="row partidos">
-              <div class="col-xs-4 cell-center">
+            <div class="row partidos row-eq-height">
+              <div class="col-xs-3 cell-center pareja" data-id="{{{ $partido->parejaLocal->id }}}">
                 @foreach($partido->parejaLocal->jugadores as $jugador) {{{ $jugador->slug }}}<br>
         				@endforeach
               </div>
+              <div class="col-xs-1 cell-center result">0</div>
               <div class="col-xs-1 cell-center">VS.</div>
-              <div class="col-xs-4 cell-center">
+              <div class="col-xs-1 cell-center result">0</div>
+              <div class="col-xs-3 cell-center pareja"  data-id="{{{ $partido->parejaVisitante->id }}}">
                 @foreach($partido->parejaVisitante->jugadores as $jugador) {{{ $jugador->slug }}}<br>
         				@endforeach        
               </div>

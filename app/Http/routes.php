@@ -15,6 +15,8 @@ Route::get('/', 'WelcomeController@index');
 Route::get('resultados', 'CuadrosController@index');
 Route::get('jornadas', 'CuadrosController@getJornadas');
 Route::get('reglamentos', 'CuadrosController@getReglamentos');
+Route::get('pareja', 'ParejasController@index');
+Route::get('parejas', 'ParejasController@parejas');
 
 Route::controllers([
 	'auth' => 'Auth\AuthController',

@@ -37,7 +37,7 @@ class CuadrosController extends Controller {
 	    'parejas' => Pareja::all()
 	  ];
 	  
-		return view('cuadro_resultados', $data);
+		return view('resultados', $data);
 	}
 	
 	public function getJornadas() {
