@@ -22,27 +22,27 @@ class JugadorSeeder extends Seeder{
     Jugador::create([ 'name' => 'Sergio Hermida María', 'slug' => 'sergio', 'pareja_id' => $pareja2->id ]);
     
     $pareja3 = Pareja::create([ 'id' => 3, 'puntos' => 0 ]);
-    Jugador::create([ 'name' => 'Andrés', 'slug' => 'andres', 'pareja_id' => $pareja3->id ]);
-    Jugador::create([ 'name' => 'Carrondo', 'slug' => 'carrondo', 'pareja_id' => $pareja3->id ]);
+    Jugador::create([ 'name' => 'Andrés Fernández', 'slug' => 'andres', 'pareja_id' => $pareja3->id ]);
+    Jugador::create([ 'name' => 'Miguel Angel Carrondo', 'slug' => 'carrondo', 'pareja_id' => $pareja3->id ]);
     
     $pareja4 = Pareja::create([ 'id' => 4, 'puntos' => 0 ]);
-    Jugador::create([ 'name' => 'Chus', 'slug' => 'chus', 'pareja_id' => $pareja4->id ]);
-    Jugador::create([ 'name' => 'Jorge', 'slug' => 'jorge', 'pareja_id' => $pareja4->id ]);
+    Jugador::create([ 'name' => 'Chus Jiménez', 'slug' => 'chus', 'pareja_id' => $pareja4->id ]);
+    Jugador::create([ 'name' => 'Jorge Carmona', 'slug' => 'jorge', 'pareja_id' => $pareja4->id ]);
     
     $pareja5 = Pareja::create([ 'id' => 5, 'puntos' => 0 ]);
     Jugador::create([ 'name' => 'Mónica Batán Zamora', 'slug' => 'monica', 'pareja_id' => $pareja5->id ]);
-    Jugador::create([ 'name' => 'Hugo', 'slug' => 'hugo', 'pareja_id' => $pareja5->id ]);
+    Jugador::create([ 'name' => 'Hugo Carmona', 'slug' => 'hugo', 'pareja_id' => $pareja5->id ]);
     
     $pareja6 = Pareja::create([ 'id' => 6, 'puntos' => 0 ]);
-    Jugador::create([ 'name' => 'Borja', 'slug' => 'borja', 'pareja_id' => $pareja6->id ]);
-    Jugador::create([ 'name' => 'Cesitar', 'slug' => 'cesitar', 'pareja_id' => $pareja6->id ]);
+    Jugador::create([ 'name' => 'Borja Requejo', 'slug' => 'borja', 'pareja_id' => $pareja6->id ]);
+    Jugador::create([ 'name' => 'Cesar Molina', 'slug' => 'cesitar', 'pareja_id' => $pareja6->id ]);
     
     $pareja7 = Pareja::create([ 'id' => 7, 'puntos' => 0 ]);
-    Jugador::create([ 'name' => 'Raul', 'slug' => 'raul', 'pareja_id' => $pareja7->id ]);
-    Jugador::create([ 'name' => 'Nano', 'slug' => 'nano', 'pareja_id' => $pareja7->id ]);
+    Jugador::create([ 'name' => 'Raul Cerezo', 'slug' => 'raul', 'pareja_id' => $pareja7->id ]);
+    Jugador::create([ 'name' => 'Sergio Corredor', 'slug' => 'nano', 'pareja_id' => $pareja7->id ]);
     
     $pareja8 = Pareja::create([ 'id' => 8, 'puntos' => 0 ]);
-    Jugador::create([ 'name' => 'Angelito', 'slug' => 'angelito', 'pareja_id' => $pareja8->id ]);
+    Jugador::create([ 'name' => 'Angel Burgos', 'slug' => 'angelito', 'pareja_id' => $pareja8->id ]);
     Jugador::create([ 'name' => 'Luis Alberto Mechoso Delgado', 'slug' => 'luiggy', 'pareja_id' => $pareja8->id ]);
     
     $torneo = $this->getTorneo();
@@ -64,9 +64,34 @@ class JugadorSeeder extends Seeder{
                   
       $semana->add(date_interval_create_from_date_string("+7 day"));
     }
-  }    
+  }
   
   protected function getTorneo() {
+    return [
+        1 => [ [ 1, 2 ], [ 3, 8 ], [ 4, 7 ], [ 6, 5 ] ],
+        2 => [ [ 2, 6 ], [ 5, 4 ], [ 7, 3 ], [ 8, 1 ] ],        
+        3 => [ [ 3, 5 ], [ 4, 2 ], [ 6, 1 ], [ 7, 8 ] ],        
+        4 => [ [ 1, 4 ], [ 2, 3 ], [ 5, 7 ], [ 8, 6 ] ],
+        5 => [],
+        6 => [ [ 3, 1 ], [ 4, 6 ], [ 5, 8 ], [ 7, 2 ] ],
+        7 => [ [ 1, 7 ], [ 2, 5 ], [ 4, 8 ], [ 6, 3 ] ],
+        8 => [ [ 3, 4 ], [ 5, 1 ], [ 7, 6 ], [ 8, 2 ] ],
+        9 => [],
+    
+        10 => [ [ 2, 1 ], [ 8, 3 ], [ 7, 4 ], [ 5, 6 ] ],
+        11 => [ [ 6, 2 ], [ 4, 5 ], [ 3, 7 ], [ 1, 8 ] ],        
+        12 => [ [ 5, 3 ], [ 2, 4 ], [ 1, 6 ], [ 8, 7 ] ],        
+        13 => [ [ 1, 4 ], [ 3, 2 ], [ 7, 5 ], [ 6, 8 ] ],
+        14 => [],
+        
+        15 => [ [ 1, 3 ], [ 6, 4 ], [ 8, 5 ], [ 2, 7 ] ],        
+        16 => [ [ 7, 1 ], [ 5, 2 ], [ 8, 4 ], [ 3, 6 ] ],
+        17 => [ [ 4, 3 ], [ 1, 5 ], [ 6, 7 ], [ 2, 8 ] ],
+        18 => [],
+    ];    
+  }
+  
+  protected function getTorneoOld() {
     return [
         1 => [ [ 1, 2 ], [ 3, 4 ], [ 5, 8 ], [ 6, 7 ] ],
         2 => [ [ 1, 3 ], [ 2, 4 ], [ 5, 7 ], [ 6, 8 ] ],

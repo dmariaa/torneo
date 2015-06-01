@@ -18,6 +18,8 @@ Route::get('reglamentos', 'CuadrosController@getReglamentos');
 Route::get('pareja', 'ParejasController@index');
 Route::get('parejas', 'ParejasController@parejas');
 
+Route::resource('jugadores','JugadoresController');
+
 Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',

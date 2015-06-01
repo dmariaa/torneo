@@ -34,14 +34,14 @@
 		<ul class="list-group">
 			<li class="list-group-item list-group-item-info">Partidos</li>
 			<li class="list-group-item">Los partidos se juegan segun el reglamento oficial de padel, que podeis descargar de <a href="http://www.padelfederacion.es/paginas/docs/REGLAMENTOJUEGO2010.pdf.">(Reglamento oficial de padel)</a> o <a href="http://www.padelfuentes.com/normativa">(aqui)</a></li>
-			<li class="list-group-item">Se jugará al mejor de 5 sets, es decir el juego finalizará cuando cualquiera de los dos equipos alcance los 3 sets ganados.</li>					
+			<li class="list-group-item">Se jugará al mejor de 3 sets, es decir el juego finalizará cuando cualquiera de los dos equipos alcance los 2 sets ganados.</li>					
 		</ul>
     <ul class="list-group">
 			<li class="list-group-item list-group-item-info">Puntuaciones</li>
 			<li class="list-group-item">Cada pareja obtendrá tantos puntos como sets ganados en el partido. Es decir:
 				<ul>
-				   <li>en un partido que termine 3-0 la pareja local obtendrá 3 puntos y la pareja visitante 0 puntos.</li>
-				   <li>en un partido que termine 1-3 la pareja local obtendrá 1 punto y la pareja visitante 3 puntos.</li>
+				   <li>en un partido que termine 2-0 la pareja local obtendrá 2 puntos y la pareja visitante 0 puntos.</li>
+				   <li>en un partido que termine 1-2 la pareja local obtendrá 1 punto y la pareja visitante 2 puntos.</li>
 				</ul> 
 			</li>
 		</ul>				
