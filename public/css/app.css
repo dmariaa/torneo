@@ -6161,5 +6161,11 @@ label,
 .pareja {
   cursor: pointer;
 }
+.winner {
+  background-color: #E8F5E9 !important;
+}
+.looser {
+  background-color: #FFEBEE !important;
+}
 
 /*# sourceMappingURL=app.css.map */

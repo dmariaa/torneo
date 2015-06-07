@@ -20,12 +20,13 @@
         <div class="panel-heading">Estadisticas</div>
         <div class="panel-body">
           <div class="col-xs-9 col-md-3">            
-            <div class="btn btn-success cell-center"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>&nbsp;<span class="badge">0</span></div>
-            <div class="btn btn-danger cell-center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>&nbsp;<span class="badge">0</span></div>                
+            <div class="btn btn-info cell-center">Jugados&nbsp;<span class="badge">{{{ $pareja->partidosJugados() }}}</span></div>
+                <div class="btn btn-success cell-center"><span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>&nbsp;<span class="badge">{{{ $pareja->partidosGanados() }}}</span></div>
+                <div class="btn btn-danger cell-center"><span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>&nbsp;<span class="badge">{{{ $pareja->partidosPerdidos() }}}</span></div>                
           </div>
           <div class="col-xs-9 col-md-3">            
             <div class="btn btn-primary cell-center btn-double">              
-              Puntos&nbsp;<span class="badge">0</span>
+              Puntos&nbsp;<span class="badge">{{{ $pareja->puntos() }}}</span>
             </div>
           </div>
           <div class="col-xs-9 col-md-3">
@@ -62,14 +63,14 @@
             @foreach($jornada->partidos as $partido)
               @if($partido->parejaLocal->id===$pareja->id || $partido->parejaVisitante->id===$pareja->id)
               <div class="row partidos row-eq-height">
-                <div class="col-xs-3 col-md-2 col-md-offset-1 cell-center">
+                <div class="col-xs-3 col-md-2 col-md-offset-1 cell-center {{{ $partido->juegos_visitante < $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante > $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}"">
                   @foreach($partido->parejaLocal->jugadores as $jugador) {{{ $jugador->slug }}}<br>
           				@endforeach
                 </div>
-                <div class="col-xs-1 cell-center result">0</div>
+                <div class="col-xs-1 cell-center result {{{ $partido->juegos_visitante < $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante > $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}"">{{{ $partido->juegos_local }}}</div>
                 <div class="col-xs-1 cell-center">VS.</div>
-                <div class="col-xs-1 cell-center result">0</div>
-                <div class="col-xs-3 col-md-2 cell-center">
+                <div class="col-xs-1 cell-center result {{{ $partido->juegos_visitante > $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante < $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}"">{{{ $partido->juegos_visitante }}}</div>
+                <div class="col-xs-3 col-md-2 cell-center {{{ $partido->juegos_visitante > $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante < $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}"">
                   @foreach($partido->parejaVisitante->jugadores as $jugador) {{{ $jugador->slug }}}<br>
           				@endforeach        
                 </div>

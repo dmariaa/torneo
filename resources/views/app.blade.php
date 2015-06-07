@@ -36,7 +36,10 @@
 					<li><a href="{{ url('resultados') }}">Resultados</a></li>
 					<li><a href="{{ url('jornadas') }}">Jornadas</a></li>
 					<li><a href="{{ url('parejas') }}">Parejas</a></li>
-					<li><a href="{{ url('reglamentos') }}">Reglamentos</a></li>					
+					@if (!Auth::guest())
+					<li><a href="{{ url('jugadores') }}">Jugadores</a></li>
+					@endif	
+					<li><a href="{{ url('reglamentos') }}">Reglamentos</a></li>									
 				</ul>
 
 				<ul class="nav navbar-nav navbar-right">
@@ -45,7 +48,7 @@
 						<!-- <li><a href="{{ url('/auth/register') }}">Register</a></li> -->
 					@else
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->name }} <span class="caret"></span></a>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">{{ Auth::user()->jugador->name }} <span class="caret"></span></a>
 							<ul class="dropdown-menu" role="menu">
 								<li><a href="{{ url('/auth/logout') }}">Logout</a></li>
 							</ul>

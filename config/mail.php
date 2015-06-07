@@ -54,7 +54,7 @@ return [
 	|
 	*/
 
-	'from' => ['address' => null, 'name' => null],
+	'from' => ['address' => 'dmariaa70@gmail.com', 'name' => 'Sistema torneo (David María Arribas)'],
 
 	/*
 	|--------------------------------------------------------------------------

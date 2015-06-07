@@ -33,7 +33,8 @@
       				&nbsp;<br>&nbsp;
       			</div>
       			@else
-      			<div class="col-xs-1 cell-center">0-0</div>
+      			<?php $partido = torneo\Partido::match($pareja->id, $pareja_local->id)->first();?>
+      			<div class="col-xs-1 cell-center {{{ $partido ->juegos_local > 0 || $partido->juegos_visitante > 0 ? 'winner' : '' }}}">{{{ $partido->juegos_local }}}-{{{ $partido->juegos_visitante }}}</div>
       			@endif @endforeach
       		</div>
       		@endforeach

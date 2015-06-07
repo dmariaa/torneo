@@ -11,6 +11,10 @@
 |
 */
 
+Event::listen('illuminate.query',function($query){
+//  var_dump($query);
+});
+
 Route::get('/', 'WelcomeController@index');
 Route::get('resultados', 'CuadrosController@index');
 Route::get('jornadas', 'CuadrosController@getJornadas');

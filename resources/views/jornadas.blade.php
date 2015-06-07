@@ -31,14 +31,14 @@
             @if(sizeof($jornada->partidos) > 0)
               @foreach($jornada->partidos as $partido)
             <div class="row partidos row-eq-height">
-              <div class="col-xs-3 cell-center pareja" data-id="{{{ $partido->parejaLocal->id }}}">
+              <div class="col-xs-3 cell-center pareja {{{ $partido->juegos_visitante < $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante > $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}">
                 @foreach($partido->parejaLocal->jugadores as $jugador) {{{ $jugador->slug }}}<br>
         				@endforeach
               </div>
-              <div class="col-xs-1 cell-center result">0</div>
+              <div class="col-xs-1 cell-center result {{{ $partido->juegos_visitante < $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante > $partido->juegos_local ? 'looser' : '' ) }}}" data-id="{{{ $partido->parejaLocal->id }}}">{{{ $partido->juegos_local }}}</div>
               <div class="col-xs-1 cell-center">VS.</div>
-              <div class="col-xs-1 cell-center result">0</div>
-              <div class="col-xs-3 cell-center pareja"  data-id="{{{ $partido->parejaVisitante->id }}}">
+              <div class="col-xs-1 cell-center result {{{ $partido->juegos_visitante > $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante < $partido->juegos_local ? 'looser' : '' ) }}}">{{{ $partido->juegos_visitante }}}</div>
+              <div class="col-xs-3 cell-center pareja {{{ $partido->juegos_visitante > $partido->juegos_local ? 'winner' : ( $partido->juegos_visitante < $partido->juegos_local ? 'looser' : '' ) }}}"  data-id="{{{ $partido->parejaVisitante->id }}}">
                 @foreach($partido->parejaVisitante->jugadores as $jugador) {{{ $jugador->slug }}}<br>
         				@endforeach        
               </div>

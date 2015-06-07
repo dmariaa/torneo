@@ -44,6 +44,11 @@ class JugadorSeeder extends Seeder{
     $pareja8 = Pareja::create([ 'id' => 8, 'puntos' => 0 ]);
     Jugador::create([ 'name' => 'Angel Burgos', 'slug' => 'angelito', 'pareja_id' => $pareja8->id ]);
     Jugador::create([ 'name' => 'Luis Alberto Mechoso Delgado', 'slug' => 'luiggy', 'pareja_id' => $pareja8->id ]);
+
+    Jugador::create([ 'name' => 'Teresa Mechoso Delgado', 'slug' => 'tere', 'reserva' => true ]);
+    Jugador::create([ 'name' => 'Jose Sanz', 'slug' => 'chanflo', 'reserva' => true ]);
+    Jugador::create([ 'name' => 'Pedro García', 'slug' => 'peter', 'reserva' => true ]);
+    Jugador::create([ 'name' => 'Alvaro Mechoso Delgado', 'slug' => 'pillin', 'reserva' => true ]);
     
     $torneo = $this->getTorneo();
 
