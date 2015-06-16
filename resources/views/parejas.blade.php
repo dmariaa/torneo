@@ -7,14 +7,7 @@
       <div class="panel panel-info">
         <div class="panel-heading">Parejas</div>        
         <ul class="list-group">
-        <?php $clasificacion = 0; $puntos = 0; ?>
         @foreach(torneo\Pareja::all()->sortByDesc('puntos') as $pareja)          
-          <?php
-            if($puntos != $pareja->puntos) { 
-              $clasificacion++;
-              $puntos = $pareja->puntos;
-            }
-          ?>
           <li id="pareja-{{{ $pareja->id }}}" data-id="{{{ $pareja->id }}}" class="list-group-item pareja">
             <div class="row">
               <div class="col-xs-9 col-md-3 btn">                
@@ -34,7 +27,7 @@
               </div>
               <div class="col-xs-9 col-md-2">
                 <div class="btn btn-info btn-double cell-center">
-                  Clasificación&nbsp;<span class="badge">{{{ $clasificacion }}}</span>
+                  Clasificación&nbsp;<span class="badge">{{{ $pareja->clasificacion }}}</span>
                 </div>
               </div>                            
             </div>
