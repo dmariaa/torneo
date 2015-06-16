@@ -6,6 +6,21 @@ use Illuminate\Support\Facades\DB;
 
 class Pareja extends Model {
   protected $table = 'parejas';
+  protected $appends = array('clasificacion');
+  
+  public function getClasificacionAttribute() {
+    $puntos = -1;
+    $clasif = [];
+    
+    forEach(Pareja::all()->sortByDesc('puntos') as $pareja) { 
+      if($puntos != $pareja->puntos) {
+        array_push($clasif, $pareja->puntos);
+        $puntos = $pareja->puntos;
+      }
+    }    
+        
+    return array_search($this->puntos, $clasif) + 1;
+  }
   
   public function getPuntosAttribute() {
     $puntosLocal = $this->partidosLocal->sum('juegos_local');

@@ -31,7 +31,7 @@
           </div>
           <div class="col-xs-9 col-md-3">
             <div class="btn btn-info cell-center btn-double">
-              Clasificación&nbsp;<span class="badge">--</span>
+              Clasificación&nbsp;<span class="badge">{{{ $pareja->clasificacion }}}</span>
             </div>
           </div>          
         </div>
