@@ -26,7 +26,7 @@
           </div>
           <div class="col-xs-9 col-md-3">            
             <div class="btn btn-primary cell-center btn-double">              
-              Puntos&nbsp;<span class="badge">{{{ $pareja->puntos() }}}</span>
+              Puntos&nbsp;<span class="badge">{{{ $pareja->puntos }}}</span>
             </div>
           </div>
           <div class="col-xs-9 col-md-3">

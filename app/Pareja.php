@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\DB;
 class Pareja extends Model {
   protected $table = 'parejas';
   
-  public function puntos() {
+  public function getPuntosAttribute() {
     $puntosLocal = $this->partidosLocal->sum('juegos_local');
     $puntosVisitante = $this->partidosVisitante->sum('juegos_visitante');
     Log::debug(sprintf("Puntos pareja %d (LocaL: %d, Visitante: %d)", $this->id, $puntosLocal, $puntosVisitante));
